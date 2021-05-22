@@ -41,9 +41,7 @@ public class NoteAdapter extends ListAdapter<Note, NoteViewHolder> {
         @Override
 
         public boolean areItemsTheSame(@NonNull Note oldItem, @NonNull Note newItem) {
-
             return oldItem.uid == newItem.uid;
-
         }
 
 

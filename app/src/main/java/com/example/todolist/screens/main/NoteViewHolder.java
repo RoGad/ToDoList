@@ -20,7 +20,7 @@ public class NoteViewHolder extends RecyclerView.ViewHolder{
 
     TextView noteText;
     CheckBox completed;
-   // View delete;
+    View delete;
 
     Note note;
     boolean silentUpdate;
@@ -29,7 +29,7 @@ public class NoteViewHolder extends RecyclerView.ViewHolder{
         super(itemView);
         noteText = itemView.findViewById(R.id.note_text);
         completed = itemView.findViewById(R.id.completed);
-          //delete = itemView.findViewById(R.id.delete);
+        delete = itemView.findViewById(R.id.delete);
 
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,11 +38,11 @@ public class NoteViewHolder extends RecyclerView.ViewHolder{
             }
         });
 
-      // delete.setOnClickListener(new View.OnClickListener() {
-          // @Override public void onClick(View v) {
-             //App.getInstance().getNoteDao().delete(note);
-          //}
-      // });
+       delete.setOnClickListener(new View.OnClickListener() {
+           @Override public void onClick(View v) {
+             App.getInstance().getNoteDao().delete(note);
+          }
+       });
         completed.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {

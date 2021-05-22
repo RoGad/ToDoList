@@ -79,7 +79,7 @@ public class NoteDetailsActivity extends AppCompatActivity {
                     if (getIntent().hasExtra(EXTRA_NOTE)) {
                         App.getInstance().getNoteDao().update(note);
                     } else {
-                        App.getInstance().getNoteDao().insert(note);
+                        App.getInstance().getNoteDao(). insert(note);
                     }
                     finish();
                 }
